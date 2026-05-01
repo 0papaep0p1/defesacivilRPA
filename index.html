@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f28c00" />
+  <title>Checklist Operação de RPA - Defesa Civil Braço do Norte</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero no-print">
+      <img src="assets/logo-defesa-civil.svg" alt="Logo Defesa Civil" />
+      <div>
+        <h1>Checklist Operação de RPA</h1>
+        <p>Defesa Civil - Braço do Norte/SC</p>
+      </div>
+    </section>
+
+    <section id="alerta" class="alerta no-print alerta-neutro">
+      Preencha os dados e marque todos os itens obrigatórios. O sistema só libera o PDF quando os pontos críticos estiverem conformes.
+    </section>
+
+    <form id="formChecklist">
+      <section class="folha" id="folhaImpressao">
+        <header class="print-header">
+          <div class="titulo-faixa">Checklist Operação de RPA - Defesa Civil Braço do Norte</div>
+          <div class="subaviso">Importante: complete todos os itens. Se algum item crítico estiver não conforme, o checklist será bloqueado para impressão.</div>
+        </header>
+
+        <div class="dados-grid">
+          <label>Piloto/Operador<input id="piloto" required placeholder="Nome do operador" value="RUAN DOS SANTOS" /></label>
+          <label>Data<input id="data" type="date" required /></label>
+          <label>CPF/Matrícula<input id="cpf" placeholder="CPF ou matrícula" value="057.690.639-55" /></label>
+          <label>Autorização de Voo<input id="autorizacao" placeholder="Nº autorização" /></label>
+          <label>Drone/Modelo<input id="modelo" required placeholder="Ex: DJI Mavic / Matrice" /></label>
+          <label>Código/Registro RPA<input id="registro" placeholder="SISANT/ANAC/Interno" /></label>
+          <label>Finalidade do Voo<input id="finalidade" required placeholder="Ex: vistoria, aerolevantamento" /></label>
+          <label>Localização<input id="localizacao" required placeholder="Local da operação" /></label>
+          <label>Horário Inicial<input id="horaInicio" type="time" /></label>
+          <label>Horário Final<input id="horaFim" type="time" /></label>
+        </div>
+
+        <div id="checklists"></div>
+
+        <section class="observacoes">
+          <label>Notas e Observações<textarea id="observacoes" placeholder="Registre ocorrências, anormalidades, manutenção necessária, restrições do local etc."></textarea></label>
+        </section>
+
+        <section class="assinatura">
+          <label>Responsável pelo Checklist<input id="responsavel" placeholder="Nome e assinatura" /></label>
+          <label>Data/Hora da Validação<input id="validacao" readonly /></label>
+        </section>
+
+        <div id="resultadoPrint" class="resultado-print">AGUARDANDO VALIDAÇÃO</div>
+      </section>
+
+      <section class="acoes no-print">
+        <button type="button" id="localizacaoBtn" class="btn-localizacao">📍 Capturar localização</button>
+        <button type="button" id="validarBtn">Validar Segurança</button>
+        <button type="button" id="salvarBtn" disabled>Salvar Checklist</button>
+        <button type="button" id="pdfBtn" disabled>Imprimir / Gerar PDF</button>
+        <button type="reset" class="secundario">Limpar</button>
+      </section>
+    </form>
+
+    <section class="historico no-print">
+      <h2>Histórico local</h2>
+      <div id="historicoLista"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

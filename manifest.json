@@ -1,0 +1,9 @@
+{
+  "name": "Checklist RPA - Defesa Civil Braço do Norte",
+  "short_name": "Checklist RPA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f28c00",
+  "icons": [{"src":"assets/logo-defesa-civil.svg","sizes":"any","type":"image/svg+xml"}]
+}
